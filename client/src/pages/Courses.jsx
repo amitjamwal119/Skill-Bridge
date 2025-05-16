@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import '../css/Courses.css';
 import Navbar from "../components/Navbar.jsx";  
 import axios from 'axios';
+import Footer from "../components/Footer.jsx";
 
 const Courses = () => {
     const courses = [
@@ -170,7 +171,10 @@ const Courses = () => {
                     <span className={`difficulty-badge ${course.difficulty.toLowerCase()}`}>
                         {course.difficulty}
                     </span>
+                     <div className="Course-price">₹399/- <s>₹3000/-</s></div>
+
                 </div>
+
                 <button className={`enroll-button ${isEnrolled ? 'enrolled' : ''}`} 
                     onClick={() => handleEnroll(course.id)} 
                     disabled={isEnrolled}>
@@ -199,6 +203,8 @@ const Courses = () => {
                 ))}
             </div>
         </div>
+
+        <Footer/>
         </>
     );
 };

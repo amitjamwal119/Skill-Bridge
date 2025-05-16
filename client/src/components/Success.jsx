@@ -7,7 +7,7 @@ const Success = () => {
   const navigate = useNavigate();
         useEffect(() => {
             const timer = setTimeout(() => {
-              navigate('/courses');
+              navigate('/home');
               window.scrollTo(0, 0);
             }, 2000);
         

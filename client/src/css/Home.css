@@ -8,8 +8,8 @@ body, .home-container {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin-top: 125px;
-  height: 300px;
+  /* margin-top: 125px; */
+  /* height: 300px; */
   padding: 20px;
   font-style: italic;
   text-align: center;
@@ -36,7 +36,7 @@ body, .home-container {
 
 .containerr{
 display: flex;
-margin-top: 100px;
+/* margin-top: 100px; */
 align-items: center;
 justify-content: center;
 }
@@ -44,7 +44,7 @@ justify-content: center;
   background-color: #E0E0E0;
   text-align: center;
   padding: 40px;
-  height: 700px;
+  height: 100%;
   width: 90%;
   border-radius: 25px;
   display: flex;
@@ -71,7 +71,7 @@ padding: 20px;
   background-color: #ffffff;
   border-radius: 10px;
   overflow: hidden;
-  width: 200px;
+  width: 100%;
   text-align: center;
   justify-content: space-evenly;
   border: 1px solid #733E24;
@@ -82,10 +82,16 @@ padding: 20px;
   border-radius: 15px;
   box-shadow: 1px 1px 5px #733E24; ;
 }
+
+.card-img-box {
+  overflow: hidden;
+  height: 400px;
+}
+
 .card-img {
   width: 100%;
-  height: auto;
-  transition: scale 0.5s ease-out;
+  height: 100%;
+  transition: .3s ease;
 }
 .card-img:hover{
   scale: 1.1;

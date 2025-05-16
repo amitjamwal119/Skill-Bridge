@@ -47,6 +47,56 @@
   border-radius: 10px;
 }
 
+
+.tick-list {
+    list-style: none; /* Remove default bullets */
+    padding-left: 0;
+    margin-left: 0;
+    text-align: left;
+}
+
+.tick-list li {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 10px;
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+.tick-icon {
+    color: green;
+    margin-right: 10px;
+    font-weight: bold;
+}
+
+/*  */
+.syllabus-container {
+  max-width: 900px;
+  margin: auto;
+  padding: 2rem;
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 0 12px rgba(0,0,0,0.1);
+}
+
+.syllabus-container h1, .syllabus-container h2 {
+  color: #003366;
+  margin-bottom: 1rem;
+}
+
+.syllabus-container ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.syllabus-container ul li {
+  padding: 8px 0;
+  font-size: 1rem;
+}
+
+/*  */
+
+
 /* Media Queries for responsiveness */
 @media (max-width: 1200px) {
   .containerd { padding: 30px; }

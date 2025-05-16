@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import '../css/University.css';
 
@@ -15,6 +15,7 @@ const University1 = () => {
 
     return (
         <>
+            
             <div className="main">
                 <div className="containerd">
                     <img 

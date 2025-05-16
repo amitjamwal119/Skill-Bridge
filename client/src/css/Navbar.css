@@ -12,6 +12,17 @@
   .logo{
     height: 50px;
   }
+
+  .dropdown-menu.show.dropdown-menu-end {
+    position: absolute!important;
+    inset: 0px 0px auto auto !important;
+    transform: translate(-58px, -2px) !important;
+}
+
+.dropdown-toggle::after {
+    display: none!important;
+}
+
   .center {
     color: #245F73;
   }
@@ -38,7 +49,7 @@
     display: inline-block;
     white-space: nowrap;
     overflow: hidden;
-    animation: marquee 100s linear infinite;
+    animation: marquee 200s linear infinite;
 }
 
 @keyframes marquee {

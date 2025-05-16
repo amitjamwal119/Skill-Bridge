@@ -33,6 +33,7 @@ const University2 = () => {
                         <li>2-Years Post-Study Work Visa in Australia.</li>
                         <li>Apply for a Master's Degree in Data Science.</li>
                     </ul>
+                    
                     <button onClick={handleEnrollment} className="apply-button">Apply Now</button>
                 </div>
             </div>

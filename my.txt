@@ -1,98 +1,204 @@
-    const courses = [
-        { 
-            id: 1, 
-            title: "Introduction to Programming", 
-            description: "Learn the basics of programming", 
-            duration: "6 hours", 
-            difficulty: "Beginner",
-            image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTX3z5aCfAn4KGyd0-ttfl0l6K-2QpYnXIE5A&s"
-        },
-        { 
-            id: 2, 
-            title: "Web Development Fundamentals", 
-            description: "Master web development basics", 
-            duration: "8 hours", 
-            difficulty: "Intermediate",
-            image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSsJuszYK7W-IwZ-GRhO6wFj1UzpOksGzSMiQ&s"
-        },
-        { 
-            id: 3, 
-            title: "Advanced JavaScript", 
-            description: "Deep dive into JavaScript", 
-            duration: "10 hours", 
-            difficulty: "Advanced",
-            image: "https://logos-world.net/wp-content/uploads/2023/02/JavaScript-Symbol.png"
-        },
-        { 
-            id: 4, 
-            title: "React Development", 
-            description: "Build modern web applications", 
-            duration: "12 hours", 
-            difficulty: "Intermediate",
-            image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTGoEJqEcRvH5wpoQ_aCe54kWDLf68kTvxTmfo47CGUPiuNObM5KOonaieZfoHgeZAhO7o&usqp=CAU"
-        },
-        { 
-            id: 5, 
-            title: "My SQL Basics", 
-            description: "Manage databases efficiently with MySQL.", 
-            duration: "15 hours", 
-            difficulty: "Beginner",
-            image: "https://lucdn.letsupgrade.net/assets/SQL_8d48bf8c30.webp"
-        },
-        { 
-            id: 6, 
-            title: "DSA with C++", 
-            description: "Optimize your algorithms using C++ DSA.", 
-            duration: "20 hours", 
-            difficulty: "Advanced",
-            image: "https://lucdn.letsupgrade.net/assets/DSA_with_C_f0fe1281ad.webp"
-        },
-        { 
-            id: 7, 
-            title: "Chat GPT Bootcamp", 
-            description: "Master AI conversations with ChatGPT.", 
-            duration: "18 hours", 
-            difficulty: "Intermediate",
-            image: "https://lucdn.letsupgrade.net/assets/chatgpt_1_67332ba922968_72f2bb149c.webp"
-        },
-        { 
-            id: 8, 
-            title: "Postman API Fundamentals", 
-            description: "API testing simplified with Postman.", 
-            duration: "10 hours", 
-            difficulty: "Beginner",
-            image: "https://lucdn.letsupgrade.net/assets/Postman_new_thumb_a87679625f.webp"
-        },
-        { 
-            id: 9, 
-            title: "Git & GitHub Fundamentals", 
-            description: "Streamline code collaboration.", 
-            duration: "12 hours", 
-            difficulty: "Intermediate",
-            image: "https://lucdn.letsupgrade.net/assets/Git_Github_3cd1529f67.webp"
-        },
-        { 
-            id: 10, 
-            title: "Data Science BootCamp", 
-            description: "Unlock your insights through data science.", 
-            duration: "14 hours", 
-            difficulty: "Advanced",
-            image: "https://lucdn.letsupgrade.net/assets/Data_Science_f129fc5817.webp"
-        },
-        { 
-            id: 11, 
-            title: "Advanced Python", 
-            description: "Advanced Python programming concepts and applications", 
-            duration: "25 hours", 
-            difficulty: "Advanced",
-            image: "https://www.98thpercentile.com/hubfs/Introduction%20to%20python%20%281%29.png"
-        },
-        { 
-            id: 12, 
-            title: "UI/UX Design", 
-            description: "Learn the principles of user interface and experience design", 
-            duration: "18 hours", 
-            difficulty: "Intermediate",
-            image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQTcuTtbBgC4EZxNdi579jS5hvWNcRzrWGZ_g&s"
+// previous userProfile.jsx
+import  { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { Card, Container, Row, Col, Button } from 'react-bootstrap';
+import axios from 'axios';
+
+
+
+export const UserProfile = () => {
+  const [user, setUser] = useState(null);
+
+
+    const navigate = useNavigate() ;
+
+    const goback = () => {
+    navigate("/home");
+  };
+
+
+   useEffect(() => {
+    const fetchUser = async () => {
+      const userId = localStorage.getItem('userId');
+      if (userId) {
+        // debugger
+        try {
+          const response = await axios.get(`http://localhost:5000/api/users/${userId}`);
+        //   if (!response.status == 200) {
+        //     throw new Error("Failed to fetch user");
+        //   }
+          const data = await response.data;
+          setUser(data);
+        } catch (error) {
+          console.error("Error fetching user:", error);
         }
-    ];
+      }
+    };
+    fetchUser();
+  }, []);
+
+  
+  return (
+    <Container className="mt-5">
+      <Row className="justify-content-center">
+        <Col md={6}>
+          <Card>
+            <Card.Body>
+              <Card.Title>User Profile</Card.Title>
+              {user ? (
+                <>
+                  <h2>Welcome, <strong>Name:</strong> {user.name}</h2>
+                  <p><strong>Email:</strong> {user.email}</p>
+                </>
+              ) : (
+                <p>Loading user data...</p>
+              )}
+            <Button className='home-btn' onClick={goback}>Go Back</Button>
+            </Card.Body>
+          </Card>
+        </Col>
+      </Row>
+    </Container>
+  );
+};
+
+//------------------------------------------
+
+// userprofile react-bootstrap code before profile picture code--------------
+
+
+import { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { Card, Container, Row, Col, Button, Form } from 'react-bootstrap';
+import axios from 'axios';
+import { useForm } from 'react-hook-form';
+import Navbar from "../../components/Navbar";
+import Footer from '../Footer';
+
+export const UserProfile = () => {
+  const [user, setUser] = useState(null);
+  const navigate = useNavigate();
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+    reset,
+  } = useForm();
+
+  const goback = () => {
+    navigate('/home');
+  };
+
+  useEffect(() => {
+    const fetchUser = async () => {
+      const userId = localStorage.getItem('userId');
+      if (userId) {
+        try {
+          const response = await axios.get(`http://localhost:5000/api/users/${userId}`);
+          const data = response.data;
+          setUser(data);
+
+          // ✅ This sets default form values
+          reset({
+            phone: data.phone || '',
+            dob: data.dob ? data.dob.slice(0, 10) : '', // trimming to "YYYY-MM-DD"
+            gender: data.gender || '',
+            occupation: data.occupation || ''
+          });
+
+        } catch (error) {
+          console.error('Error fetching user:', error);
+        }
+      }
+    };
+    fetchUser();
+  }, [reset]); // ✅ Add reset as dependency
+
+
+  const onSubmit = async (formData) => {
+    const userId = localStorage.getItem('userId');
+    try {
+      await axios.put(`http://localhost:5000/api/users/${userId}`, formData);
+      alert('User profile updated successfully!');
+      reset();
+    } catch (err) {
+      console.error(err);
+      alert('Error updating user profile.');
+    }
+  };
+
+  return (
+    <>
+    <Navbar/>
+    <Container className="d-flex justify-content-center">
+      <Row className="">
+        <Col lg={12}>
+          <Card style={{ width: "500px", margin: "20px 0" }}>
+            <Card.Body>
+              <Card.Title>User Profile</Card.Title>
+              {user ? (
+                <>
+                  <h2>Welcome, <strong>{user.name}</strong> </h2>
+                  <p><strong>Email:</strong> {user.email}</p>
+                  {/* Image Input start */}
+                  <input type="file" />
+                  {/* Image Input end */}
+                  <Form onSubmit={handleSubmit(onSubmit)}>
+                    <Form.Group className="mb-3">
+                      <Form.Label>Phone Number</Form.Label>
+                      <Form.Control
+                        type="tel"
+                        placeholder="Enter phone number"
+                        {...register('phone', { required: true })}
+                      />
+                      {errors.phone && <small className="text-danger">Phone number is required</small>}
+                    </Form.Group>
+
+                    <Form.Group className="mb-3">
+                      <Form.Label>Date of Birth</Form.Label>
+                      <Form.Control
+                        type="date"
+                        {...register('dob', { required: true })}
+                      />
+                      {errors.dob && <small className="text-danger">Date of birth is required</small>}
+                    </Form.Group>
+
+                    <Form.Group className="mb-3">
+                      <Form.Label>Gender</Form.Label>
+                      <Form.Select {...register('gender', { required: true })}>
+                        <option value="">Select gender</option>
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                        <option value="Other">Other</option>
+                      </Form.Select>
+                      {errors.gender && <small className="text-danger">Gender is required</small>}
+                    </Form.Group>
+
+                    <Form.Group className="mb-3">
+                      <Form.Label>Occupation</Form.Label>
+                      <Form.Control
+                        type="text"
+                        placeholder="Enter occupation"
+                        {...register('occupation', { required: true })}
+                      />
+                      {errors.occupation && <small className="text-danger">Occupation is required</small>}
+                    </Form.Group>
+
+                    <Button type="submit" variant="primary">Update Profile</Button>
+                  </Form>
+                </>
+              ) : (
+                <p>Loading user data...</p>
+              )}
+              <Button className="mt-3" variant="secondary" onClick={goback}>Go Back</Button>
+            </Card.Body>
+          </Card>
+        </Col>
+      </Row>
+    </Container>
+    <Footer/>
+    </>
+    
+  );
+};
+//--------------------------------

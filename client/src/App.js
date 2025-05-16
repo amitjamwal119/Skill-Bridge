@@ -1,4 +1,3 @@
-import React from 'react';
 import { Link } from "react-router-dom";
 import axios from 'axios';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
@@ -17,6 +16,11 @@ import University3 from './components/University/University3';
 import './App.css';
 import { NewSuccess } from './dynamic/NewSuccess';
 import { Coursesinfo } from './dynamic/Coursesinf';
+import { UserProfile } from "./components/User/UserProfile";
+import UserEnrollment from "./components/User/UserEnrollment";
+import { DataanalyticsSyllabus } from "./components/University/DataanalyticsSyllabus";
+import { CyberSecuritySyllabus } from "./components/University/CyberSecuritySyllabus";
+import { DataScienceSyllabus } from "./components/University/DataScienceSyllabus";
 
     function App() {
       const instance = axios.create({
@@ -28,6 +32,8 @@ import { Coursesinfo } from './dynamic/Coursesinf';
     <>
     <Router>
         <Routes>
+          <Route path="enrolledcourses" element={<UserEnrollment/>}/>
+          <Route path="/studentprofile" element={<UserProfile/>}/>
           <Route path='/newsuccess' element={<NewSuccess/>} />
           <Route path='/coursinfo/:courseId' element={<Coursesinfo/>} />
           <Route path="/" element={<LogIn />} />
@@ -39,13 +45,16 @@ import { Coursesinfo } from './dynamic/Coursesinf';
           <Route path="/success" element={<Success />} />
           <Route path="/loginSuccess" element={<LoginSuccess />} />
           <Route path="/signupSuccess" element={<SignupSuccess />} />
-          <Route path="/university1" element={<University1 />} />
-          <Route path="/university2" element={<University2 />} />
-          <Route path="/university3" element={<University3 />} />
+          <Route path="/dataanalytics" element={<University1 />} />
+          <Route path="/datascience" element={<University2 />} />
+          <Route path="/cybersecurity" element={<University3 />} />
+          <Route path="/dasyllabus" element={<DataanalyticsSyllabus/>}/>
+          <Route path="/dssyllabus" element={<DataScienceSyllabus/>}/>
+          <Route path="/csecsyllabus" element={<CyberSecuritySyllabus/>} />
         </Routes>
       {/* <div data-aos="fade" className="footer-section"> THE PART DATA-AOS="FADE " HAS BEEN COMENTED      */} 
 
-      <div   className="footer-section">
+      {/* <div   className="footer-section">
           <h2 className="section-title">Get in Touch</h2>
           <p className="section-description">
             Have questions or want to learn more about our services? Contact us today.
@@ -57,7 +66,7 @@ import { Coursesinfo } from './dynamic/Coursesinf';
           <div className="footer-bottom">
           <p>&copy; 2025 Skill Bridge. All rights reserved.</p>
         </div>
-      </div>
+      </div> */}
     </Router>
     </>
   );
