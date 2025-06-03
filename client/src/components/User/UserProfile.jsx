@@ -41,7 +41,7 @@ export const UserProfile = () => {
             occupation: data.occupation || '',
             profileImage: data.profileImage || ''
           });
-            console.log("reeeeessss",response)
+            // console.log("reeeeessss",response)
         } catch (error) {
           console.error('Error fetching user:', error);
         }
@@ -79,10 +79,10 @@ if(img){
   await axios.put(`http://localhost:5000/api/users/${userId}`, {profileImage:img.data?.image})
 }
 
-      // alert('Image uploaded successfully!');
-      // // Re-fetch user data to show new image
-      // const updatedUser = await axios.get(`http://localhost:5000/api/users/${userId}`);
-      // setUser(updatedUser.data);
+      alert('Image uploaded successfully!');
+      // Re-fetch user data to show new image
+      const updatedUser = await axios.get(`http://localhost:5000/api/users/${userId}`);
+      setUser(updatedUser.data);
     } catch (error) {
       console.error('Error uploading image:', error);
       alert('Image upload failed.');
@@ -117,13 +117,12 @@ if(img){
 
                     
                     {user.profileImage && (
-                      <div className="img-class" style={{borderRadius: "50%"}}>
+                      <div className="img-class">
                           <img
                         src={`http://localhost:5000/uploads/${user.profileImage}`}
                         alt="Profile"
                         width="120px"
                         className="mb-3 rounded"
-                        
                       />
                       </div>
                       

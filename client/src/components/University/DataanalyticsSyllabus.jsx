@@ -1,6 +1,9 @@
+import Navbar from "../../components/Navbar";
+import Footer from "../Footer";
 export const DataanalyticsSyllabus = () => {
   return (
     <>
+    <Navbar/>
     <div className="p-6">
       <h1 className="text-3xl font-bold mb-6 text-center">Data Analytics Syllabus</h1>
       <div className="space-y-6">
@@ -99,6 +102,7 @@ export const DataanalyticsSyllabus = () => {
 
       </div>
     </div>
+    <Footer/>
     </>
     
   );

@@ -1,5 +1,5 @@
-import { Link } from "react-router-dom";
-import axios from 'axios';
+// import { Link } from "react-router-dom";
+// import axios from 'axios';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import LogIn from "./components/LogIn";
@@ -23,11 +23,11 @@ import { CyberSecuritySyllabus } from "./components/University/CyberSecuritySyll
 import { DataScienceSyllabus } from "./components/University/DataScienceSyllabus";
 
     function App() {
-      const instance = axios.create({
-        baseURL: 'http://localhost:5000',
-        timeout: 5000,
-        headers: {'X-Custom-Header': 'foobar'}
-    });
+    //   const instance = axios.create({
+    //     baseURL: 'http://localhost:5000',
+    //     timeout: 5000,
+    //     headers: {'X-Custom-Header': 'foobar'}
+    // });
   return (
     <>
     <Router>

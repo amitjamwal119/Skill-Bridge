@@ -1,6 +1,7 @@
 import userImg from "../assets/user1.gif";
 import "../css/About.css";
 import Navbar from "../components/Navbar.jsx";
+import Footer from "../components/Footer.jsx";
 
 const About = () => {
   return (
@@ -44,7 +45,7 @@ const About = () => {
 
         </div>
       </main>
-
+      <Footer/>
     </>
   );
 };

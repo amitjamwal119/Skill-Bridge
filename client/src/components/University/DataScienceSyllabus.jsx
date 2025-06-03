@@ -1,8 +1,11 @@
+import Footer from "../Footer";
+import Navbar from "../../components/Navbar";
 
 
 export const DataScienceSyllabus = () => {
   return (
     <>
+    <Navbar/>
     <div className="syllabus-container">
       <h1>Master’s in Data Science – Syllabus Overview</h1>
       <p>This syllabus outlines the key modules, tools, and learning outcomes for the Data Science program at Sheffield Hallam University.</p>
@@ -42,6 +45,7 @@ export const DataScienceSyllabus = () => {
 
       <p><strong>Note:</strong> Course content may evolve to align with industry advancements and academic requirements.</p>
     </div>
+    <Footer/>
     </>
     
   );

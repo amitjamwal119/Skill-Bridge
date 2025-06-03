@@ -2,6 +2,7 @@ import { useState } from 'react';
 import axios from 'axios';
 import '../css/Contact.css';
 import Navbar from '../components/Navbar';
+import Footer from './Footer';
 
 const Contact = () => {
     const [formData, setFormData] = useState({
@@ -149,7 +150,7 @@ const Contact = () => {
                     ></iframe>
                 </div>
             </div>
-
+        <Footer/>
         </>
 
     );

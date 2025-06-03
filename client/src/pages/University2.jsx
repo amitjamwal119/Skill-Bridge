@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import '../css/University.css';
+import Footer from "../components/Footer";
 
 const University2 = () => {
     const navigate = useNavigate();
@@ -37,6 +38,7 @@ const University2 = () => {
                     <button onClick={handleEnrollment} className="apply-button">Apply Now</button>
                 </div>
             </div>
+            <Footer/>
         </>
     );
 };

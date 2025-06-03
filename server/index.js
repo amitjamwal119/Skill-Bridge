@@ -70,7 +70,7 @@ app.post("/login", (req, res) => {
 app.get("/api/users/:userId", async (req, res) => {
     try {
       const userRes = await User.findById({_id:req.params.userId})
-      console.log("ravaaaa",userRes)
+      // console.log("ravaaaa",userRes)
         const user = await User.findById(req.params.userId)
         
         // console.log('user', user)
@@ -78,7 +78,7 @@ app.get("/api/users/:userId", async (req, res) => {
             return res.status(404).json({ error: "User not found" });
             
         }
-        console.log("usreeeee",user)
+        // console.log("usreeeee",user)
         res.json(user);
     } catch (error) {
         console.error("Error fetching user:", error);
