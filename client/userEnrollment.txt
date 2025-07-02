@@ -1,4 +1,3 @@
-import '../../css/EnrolledCourse.css';
 import { useState, useEffect } from "react";
 import Navbar from "../Navbar";
 import axios from "axios";
@@ -47,8 +46,8 @@ const UserEnrollment = () => {
                 ) : (
                     <Row>
                         {enrolledCourses.map((course, index) => (
-                            <Col key={index} xs={12} sm={6} className="mb-4">
-                                <Card className="h-100 shadow-sm custom-enroll-card">
+                            <Col key={index} xs={12} sm={6} md={3} className="mb-4">
+                                <Card className="h-100 shadow-sm">
                                     <Card.Body>
                                         <Card.Title>{course.courseTitle}</Card.Title>
                                         {/* <Card.Text>

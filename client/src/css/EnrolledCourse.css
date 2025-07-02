@@ -1,0 +1,17 @@
+/* UserEnrollment.css */
+.custom-enroll-card {
+  min-width: 250px;  
+ max-width: 300px;
+ 
+  margin: auto;
+  text-align: center;
+  word-wrap: break-word;
+  white-space: normal;
+}
+
+.custom-enroll-card .card-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #2c3e50;
+  word-break: break-word;
+}

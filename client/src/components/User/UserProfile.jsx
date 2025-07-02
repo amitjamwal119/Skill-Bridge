@@ -129,8 +129,8 @@ if(img){
                     )}
 
 
-                      <input type="file" onChange={handleImageChange} />
-                      <Button onClick={handleImageUpload}>
+                      <input type="file" className='file-upload' onChange={handleImageChange} />
+                      <Button className='upload-Image' onClick={handleImageUpload}>
                         Upload Image
                       </Button>
                     
