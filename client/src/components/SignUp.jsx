@@ -18,7 +18,9 @@ const SignUp = () => {
             setError("Passwords do not match");
             return
         }
-          axios.post("http://localhost:5000/register", { name, email, password })
+          axios.post("https://skill-bridge-7gdh.onrender.com/register", { name, email, password })
+        // http://localhost:5000/register  
+        // https://skill-bridge-7gdh.onrender.com
           .then(result=>{
             console.log(result);
             localStorage.setItem("userId",result.data._id);

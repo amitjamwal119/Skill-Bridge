@@ -14,7 +14,9 @@ const UserEnrollment = () => {
     useEffect(() => {
         const fetchEnrolledCourses = async () => {
             try {
-                const response = await axios.get(`http://localhost:5000/api/enrolled-courses/${userId}`);
+                const response = await axios.get(`https://skill-bridge-7gdh.onrender.com/api/enrolled-courses/${userId}`);
+                // http://localhost:5000/api/enrolled-courses/${userId}
+                // https://skill-bridge-7gdh.onrender.com
                 setEnrolledCourses(response.data.enrolledCourses || []);
             } catch (error) {
                 console.error("Error fetching enrolled courses:", error);

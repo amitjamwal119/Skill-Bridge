@@ -17,7 +17,9 @@ const LogIn = () => {
         setLoading(true);
 
         try {
-            const response = await axios.post("http://localhost:5000/login", { email, password });
+            const response = await axios.post("https://skill-bridge-7gdh.onrender.com/login", { email, password });
+            // http://localhost:5000/login
+            // 
             
             if (response.data.success) {
                 localStorage.setItem("userId", response.data.userId);

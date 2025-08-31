@@ -28,7 +28,9 @@ export const UserProfile = () => {
       const userId = localStorage.getItem('userId');
       if (userId) {
         try {
-          const response = await axios.get(`http://localhost:5000/api/users/${userId}`);
+          const response = await axios.get(`https://skill-bridge-7gdh.onrender.com/api/users/${userId}`);
+          // http://localhost:5000/api/users/${userId}
+          // https://skill-bridge-7gdh.onrender.com
           
           const data = response.data;
           setUser(data);

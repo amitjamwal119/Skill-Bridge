@@ -30,7 +30,9 @@ const Contact = () => {
         setSuccess(false);
 
         try {
-            const response = await axios.post('http://localhost:5000/api/contact/submit', formData);
+            const response = await axios.post('https://skill-bridge-7gdh.onrender.com/api/contact/submit', formData);
+            // http://localhost:5000/api/contact/submit
+            // https://skill-bridge-7gdh.onrender.com
             if (response.status === 201) {
                 setSuccess(true);
                 setFormData({
