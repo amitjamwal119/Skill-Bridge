@@ -165,7 +165,7 @@ const Courses = () => {
                     className="course-image"
                 />
                 <h3 className="course-title">{course.title}</h3>
-                <p className="course-description">{course.description}</p>
+                {/* <p className="course-description">{course.description}</p> */}
                 <div className="course-info">
                     <span className="course-duration">{course.duration}</span>
                     <span className={`difficulty-badge ${course.difficulty.toLowerCase()}`}>

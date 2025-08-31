@@ -30,7 +30,9 @@ app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
     
     const port = process.env.PORT || 5000;
 
-    mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/skill-bridge')
+    mongoose.connect(process.env.MONGODB_URI || 'mongodb+srv://amit_jamwal:0852@sb-cluster.dq82p0x.mongodb.net/?retryWrites=true&w=majority&appName=SB-Cluster')
+    // mongodb://localhost:27017/skill-bridge
+    // mongodb+srv://amit_jamwal:0852@sb-cluster.dq82p0x.mongodb.net/?retryWrites=true&w=majority&appName=SB-Cluster
     .then(() => console.log('Connected to MongoDB'))
     .catch(err => {
         console.error('MongoDB connection error:', err);

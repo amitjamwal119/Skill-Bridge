@@ -1,6 +1,7 @@
 import '../../css/EnrolledCourse.css';
 import { useState, useEffect } from "react";
 import Navbar from "../Navbar";
+import Footer from "../Footer";
 import axios from "axios";
 import { Container, Row, Col, Card, Button, Spinner, Alert } from "react-bootstrap";
 
@@ -30,12 +31,10 @@ const UserEnrollment = () => {
     return (
         <>
             <Navbar />
-                 <h2 className="text-center mb-4">My Enrolled Courses</h2>
+            <h2 className="text-center mb-4">My Enrolled Courses</h2>
 
             <Container className="my-4">
-                <div>
-                    
-                </div>
+
                 {loading ? (
                     <div className="text-center">
                         <Spinner animation="border" variant="primary" />
@@ -47,10 +46,11 @@ const UserEnrollment = () => {
                 ) : (
                     <Row>
                         {enrolledCourses.map((course, index) => (
-                            <Col key={index} xs={12} sm={6} className="mb-4">
+                            <Col key={index} xs={12} sm={6} lg={4} className="mb-4">
                                 <Card className="h-100 shadow-sm custom-enroll-card">
                                     <Card.Body>
                                         <Card.Title>{course.courseTitle}</Card.Title>
+                                        <p>Enrolled on:{course.enrollmentDate}</p>
                                         {/* <Card.Text>
                                             <strong>Enrolled on:</strong><br />
                                             {new Date(course.enrollmentDate).toLocaleDateString()}
@@ -65,7 +65,7 @@ const UserEnrollment = () => {
                     </Row>
                 )}
             </Container>
-        
+            <Footer/>
         </>
     );
 };

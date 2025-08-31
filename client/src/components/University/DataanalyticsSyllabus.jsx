@@ -4,7 +4,8 @@ export const DataanalyticsSyllabus = () => {
   return (
     <>
     <Navbar/>
-    <div className="p-6">
+    <div className="container">
+<div className="p-6 d-flex flex-column justify-content-center">
       <h1 className="text-3xl font-bold mb-6 text-center">Data Analytics Syllabus</h1>
       <div className="space-y-6">
 
@@ -102,6 +103,8 @@ export const DataanalyticsSyllabus = () => {
 
       </div>
     </div>
+    </div>
+    
     <Footer/>
     </>
     

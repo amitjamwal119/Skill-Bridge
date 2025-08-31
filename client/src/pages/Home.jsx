@@ -91,7 +91,7 @@ const Home = () => {
         <div className="containerr-1">
           <h5>Partner University Programs</h5>
           <div className="cards">
-            <div className="card" onClick={() => handledataanalytics()}>
+            <div className="card">
               <div className="card-img-box">
                 <img 
                 src="https://images.unsplash.com/photo-1562774053-701939374585?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" 
@@ -102,10 +102,10 @@ const Home = () => {
               <div className="card-body">
                 <h5 className="card-title">Data Analytics Program</h5>
                 <p className="card-text">Master Data Analytics</p>
-                <button className="card-button">Learn More</button>
+                <button className="card-button" onClick={() => handledataanalytics()}>Learn More</button>
               </div>
             </div>
-            <div className="card" onClick={() =>  handledatascience()}>
+            <div className="card">
               <div className="card-img-box">
                 <img 
                 src="https://images.unsplash.com/photo-1498243691581-b145c3f54a5a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" 
@@ -116,10 +116,10 @@ const Home = () => {
               <div className="card-body">
                 <h5 className="card-title">Master of Data Science</h5>
                 <p className="card-text">Excel in IT Management</p>
-                <button className="card-button">Learn More</button>
+                <button className="card-button" onClick={() =>  handledatascience()}>Learn More</button>
               </div>
             </div>
-            <div className="card" onClick={() => handlecybersecurity()}>
+            <div className="card">
               <div className="card-img-box">
                 <img 
                 src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" 
@@ -130,7 +130,7 @@ const Home = () => {
               <div className="card-body">
                 <h5 className="card-title">Master of Cybersecurity</h5>
                 <p className="card-text">Advance your Computing skills</p>
-                <button className="card-button">Learn More</button>
+                <button className="card-button" onClick={() => handlecybersecurity()}>Learn More</button>
               </div>
             </div>
           </div>

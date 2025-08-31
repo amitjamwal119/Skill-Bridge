@@ -34,10 +34,10 @@ const AboutUs = () => {
                             <h3>Innovation</h3>
                             <p>Constantly evolving to meet the changing needs of learners.</p>
                         </div>
-                        <div className="value-card">
+                        {/* <div className="value-card">
                             <h3>Community</h3>
                             <p>Building a supportive learning environment for all students.</p>
-                        </div>
+                        </div> */}
                     </div>
                 </section>
             </div>

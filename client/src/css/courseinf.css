@@ -15,9 +15,10 @@
 .course-image {
   width: 100%;
   height: 100%;
-  max-height: 350px;
+  /* max-height: 350px; */
   object-fit: cover;
   display: block;
+  height: 100px;
 }
 
 /* Course Card Layout */
@@ -68,7 +69,7 @@
 
 /* Titles and Text */
 .course-title {
-  font-size: 2rem;
+  font-size: 1.3rem;
   font-weight: bold;
   margin-bottom: 1rem;
 }
@@ -85,7 +86,7 @@
   padding: 0;
   margin-bottom: 1.5rem;
   border-top: 1px solid #ddd;
-  border-bottom: 1px solid #ddd;
+  /* border-bottom: 1px solid #ddd; */
 }
 
 .list-group-item {
@@ -107,16 +108,17 @@
 
 /* Enroll Button */
 .enroll-button {
-  width: 100%;
-  padding: 1rem;
-  font-size: 1.1rem;
-  font-weight: bold;
-  background-color: #007bff;
-  color: #fff;
-  border: none;
-  border-radius: 7px;
-  cursor: pointer;
-  transition: background 0.3s ease;
+    width: 100%;
+    /* padding: 1rem; */
+    font-size: 1.1rem;
+    font-weight: bold;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 7px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    margin-top: auto;
 }
 
 .enroll-button:hover {
