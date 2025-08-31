@@ -130,7 +130,10 @@ const Courses = () => {
             }
     
             // ✅ Call your API
-            const response = await axios.post('http://localhost:5000/enroll-course', {
+            const response = await axios.post('https://skill-bridge-7gdh.onrender.com/enroll-course',
+                // http://localhost:5000/enroll-course
+                // https://skill-bridge-7gdh.onrender.com
+                {
                 userId: userId,
                 courseTitle: course.title
             });

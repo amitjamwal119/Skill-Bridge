@@ -69,7 +69,10 @@ export const UserProfile = () => {
     imageData.append('profileImage', image);
 
     try {
-      const img = await axios.post(`http://localhost:5000/api/users/${userId}/upload-image`, imageData, {
+      const img = await axios.post(`https://skill-bridge-7gdh.onrender.com/api/users/${userId}/upload-image`, 
+        // http://localhost:5000
+        // https://skill-bridge-7gdh.onrender.com
+        imageData, {
         headers: {
           'Content-Type': 'multipart/form-data',
         },
@@ -78,12 +81,17 @@ export const UserProfile = () => {
       // console.log("imgggg",img);
 if(img){
 
-  await axios.put(`http://localhost:5000/api/users/${userId}`, {profileImage:img.data?.image})
+  await axios.put(`https://skill-bridge-7gdh.onrender.com/api/users/${userId}`,
+    // http://localhost:5000
+    // https://skill-bridge-7gdh.onrender.com
+    {profileImage:img.data?.image})
 }
 
       alert('Image uploaded successfully!');
       // Re-fetch user data to show new image
-      const updatedUser = await axios.get(`http://localhost:5000/api/users/${userId}`);
+      const updatedUser = await axios.get(`https://skill-bridge-7gdh.onrender.com/api/users/${userId}`);
+      // http://localhost:5000
+      // https://skill-bridge-7gdh.onrender.com
       setUser(updatedUser.data);
     } catch (error) {
       console.error('Error uploading image:', error);
@@ -94,7 +102,9 @@ if(img){
   const onSubmit = async (formData) => {
     const userId = localStorage.getItem('userId');
     try {
-      await axios.put(`http://localhost:5000/api/users/${userId}`, {...formData});
+      await axios.put(`https://skill-bridge-7gdh.onrender.com/api/users/${userId}`, {...formData});
+      // http://localhost:5000
+      // https://skill-bridge-7gdh.onrender.com
       alert('User profile updated successfully!');
     } catch (err) {
       console.error(err);
@@ -106,6 +116,7 @@ if(img){
     <>
       <Navbar />
       <Container className="d-flex justify-content-center">
+        <div className=""></div>
         <Row>
           <Col lg={12}>
             <Card style={{ width: "500px", margin: "20px 0" }}>
@@ -121,7 +132,9 @@ if(img){
                     {user.profileImage && (
                       <div className="img-class">
                           <img
-                        src={`http://localhost:5000/uploads/${user.profileImage}`}
+                        src={`https://skill-bridge-7gdh.onrender.com/uploads/${user.profileImage}`}
+                        // localhost:5000/uploads/${user.profileImage}
+                        // https://skill-bridge-7gdh.onrender.com
                         alt="Profile"
                         width="120px"
                         className="mb-3 rounded"

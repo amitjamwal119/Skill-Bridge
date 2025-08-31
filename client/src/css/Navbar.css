@@ -1,13 +1,13 @@
 .navbar {
     background: linear-gradient(to bottom, #E0E0E0, #E0E0E0,#E0E0E0,#E0E0E0, #F2F0EF);
-    padding: 1rem;
+    /* padding: 1rem; */
     overflow: hidden;
   }
   
   .container {
     display: flex;
     align-items: center;
-    justify-content: space-evenly;
+    /* justify-content: space-evenly; */
   }
   .logo{
     height: 50px;
@@ -63,9 +63,9 @@
 
 
 @media (min-width: 768px) and (max-width: 1024px) {
-  .container {
+  /* .container {
     justify-content: space-around;
-  }
+  } */
 
   .logo {
     height: 45px;
